@@ -3,15 +3,17 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Name</th><th>Phone Number</th>
+                    <th>Name</th><th>Phone Number</th><th></th>
                 </tr>
             </thead>
             <tbody data-bind="foreach: customers">
                 <tr>
                     <td data-bind="text: name"></td>
                     <td data-bind="text: phoneNumber"></td>
+                    <td><button class="btn" data-bind="click: function(){ $root.editCustomer($data); }">Edit</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <div class="offset1 span3" data-bind="compose: {model: editScreen, activate: true, transition: 'entrance'}"></div>
 </div>

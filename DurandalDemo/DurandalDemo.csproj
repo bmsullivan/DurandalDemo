@@ -116,10 +116,12 @@
   <ItemGroup>
     <Content Include="App\main.js" />
     <Content Include="App\services\customerService.js" />
+    <Content Include="App\viewmodels\customerEdit.js" />
     <Content Include="App\viewmodels\customerList.js" />
     <Content Include="App\viewmodels\flickr.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\viewmodels\welcome.js" />
+    <Content Include="App\views\customerEdit.html" />
     <Content Include="App\views\customerList.html" />
     <Content Include="App\views\detail.html" />
     <Content Include="App\views\flickr.html" />
