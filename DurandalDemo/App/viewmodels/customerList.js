@@ -4,6 +4,8 @@
 
     var CustomerEdit = require('viewmodels/customerEdit');
 
+    var Events = require('durandal/events');
+
     var ctor = function() {
         var self = this;
 
@@ -21,6 +23,12 @@
 
         self.editCustomer = function(cust) {
             var screen = new CustomerEdit(cust);
+            Events.includeIn(screen);
+
+            screen.on('customerSaved', function() {
+                self.editScreen(null);
+            });
+
             self.editScreen(screen);
         };
     };

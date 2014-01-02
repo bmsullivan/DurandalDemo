@@ -12,7 +12,9 @@
                 custFromDB.Name = self.customer.name();
                 custFromDB.PhoneNumber = self.customer.phoneNumber();
                 customerService.saveCustomer(custFromDB).done(function() {
-                    app.showMessage('Customer saved!');
+                    app.showMessage('Customer saved!').then(function() {
+                        self.trigger('customerSaved');
+                    });
                 });
             });
         };
