@@ -1,2 +1,11 @@
 ﻿<script type="text/javascript" src="~/Scripts/require.js" data-main="/scripts/main"></script>
 
+<span data-bind="text: message"></span>
+<button data-bind="click: addThing">Click Me</button>
+<span data-bind="text: message"></span>
+
+<ol data-bind="foreach: things">
+    <li data-bind="text: text"></li>
+</ol>
+
+<span data-bind="text: numberOfThings"></span>
