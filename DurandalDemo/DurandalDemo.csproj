@@ -114,6 +114,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\main-built.js" />
     <Content Include="App\main.js" />
     <Content Include="App\services\customerService.js" />
     <Content Include="App\viewmodels\customerEdit.js" />
@@ -249,6 +250,12 @@
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>if '$(Configuration)' == 'Release' (
+cd $(ProjectDir)
+weyland build
+)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
