@@ -1,6 +1,7 @@
 ﻿define(function(require) {
     var customerService = require('services/customerService');
     var app = require('durandal/app');
+    var MyDialog = require('viewmodels/myDialog');
 
     var CustomerEdit = function(cust) {
         var self = this;
@@ -12,7 +13,8 @@
                 custFromDB.Name = self.customer.name();
                 custFromDB.PhoneNumber = self.customer.phoneNumber();
                 customerService.saveCustomer(custFromDB).done(function() {
-                    app.showMessage('Customer saved!').then(function() {
+                    var dialog = new MyDialog(self.customer);
+                    app.showDialog(dialog).then(function() {
                         self.trigger('customerSaved');
                     });
                 });
